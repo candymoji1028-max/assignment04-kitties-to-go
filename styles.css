@@ -60,7 +60,7 @@ body{
 }
 .main-container p {
   color: #3f3f3f;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   line-height: 1.6rem;
 }
 .text-blue {
@@ -148,5 +148,10 @@ body{
 }
 .footer-copyright {
   font-size: 0.9rem;
+}
 
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
