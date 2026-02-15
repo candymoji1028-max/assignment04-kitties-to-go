@@ -112,8 +112,15 @@ body{
   line-height: 1.6rem;
 }
 /*footer section style*/
+/*footer image behaves like a background - do not put in html*/
+footer {
+  background-image: url("images/lesson04-mock4-footer-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .footer-container {
-  background-color: #59515E;
+  /*background-color: #59515E;*/
   color: white;
   text-align: center;
   padding: 30px 20px;
