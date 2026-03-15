@@ -22,9 +22,10 @@ header p{
 .header-nav-ul {
   list-style: none;
   padding:0;
-  margin: 1rem 5.5rem 1rem;
+  margin: 1rem 1rem; /*reduce size of margin so links have space*/
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap; /*allow wrapping at 200% zoom */
   gap: 10px; /*add space between link title*/
 }
 .header-nav-a {
@@ -36,6 +37,7 @@ header p{
 .header-nav-ul li::after {
   content: " /";
   padding: 0 10px;
+  white-space: nowrap; /*keep each link and slash together*/
 }
 .header-nav-ul li:last-child::after{
   content: "";
@@ -161,4 +163,56 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/*-----------------------------------------------
+Accessibility features
+-----------------------------------------------*/
+/* skip to main content*/
+.skip-link {
+  position: absolute;
+  top:-40px;
+  left: 0;
+  background: #ecb722;
+  color: #1b447f;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 9999; /*ensure it appears on top of everything when focused */
+}
+.skip-link:focus {/* force to appear above the header */
+  position: absolute;
+  top: 0; 
+}
+/*back to top*/
+.back-to-top-container {
+  text-align: center;
+  margin: 2rem 0; 
+}
+.back-to-top {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #03a3df;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-to-top:hover,
+.back-to-top:focus {
+  background: #1b447f;
+  outline: 3px solid #ecb722;
+  outline-offset: 3px;
+}
+
+figure {
+  outline: none;
+}
+figure:focus {
+  outline: none;
+}
+/*add style so the current page looks different*/
+.header-nav-a[aria-current="page"] {
+  color: #52B2BF;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #52B2BF
 }

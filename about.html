@@ -5,15 +5,16 @@
     <title>Kitties To Go</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
-  <body>
-    <header>
+  <body tabindex="-1">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="top">
       <h1>KITTIES TO GO!</h1>
       <p> Seattle's premiere drive-thru<br>cat rentals</p>
     </header>
     <nav class="header-nav">
       <ul class="header-nav-ul">
         <li><a class="header-nav-a" href="index.html">Home</a></li>
-        <li><a class="header-nav-a" href="about.html">About</a></li>
+        <li><a class="header-nav-a" href="about.html" aria-current="page">About</a></li>
         <li><a class="header-nav-a" href="#Rates">Rates</a></li>
         <li><a class="header-nav-a" href="#Liability-Release">Liability Release</a></li>
         <li><a class="header-nav-a" href="#Kitty-Profiles">Kitty Profiles</a></li>
@@ -23,7 +24,7 @@
     <figure>
       <img src="images/lesson04-mock2-banner-image.jpg" class="banner-img" alt="Kitties To Go banner image">
     </figure>
-    <main class="main-content">
+    <main id="main-content" class="main-content">
       <div class="main-container">
         <article>
           <h2>ABOUT KITTIES TO GO</h2>
@@ -63,6 +64,9 @@
         </section>
       </aside>
     </main>
+    <div class="back-to-top-container">
+      <a href="#top" class="back-to-top">Back to top</a>
+      </div>
     <footer class="footer-container">
       <figure>
           <img src="images/lesson04-mock5-cat-logo.png" height="50" width="200" alt="Kitties To Go cat logo">
