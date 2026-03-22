@@ -57,7 +57,16 @@
         <section class="cat-week">
           <h3>CAT OF THE WEEK</h3>
           <figure>
-          <img src="images/lesson04-mock3-sidebar-cat.jpg" height="180" width="200" alt="Cat of the week">
+          <img 
+              src="images/lesson04-mock3-sidebar-cat-500.jpg" 
+              srcset="
+                images/lesson04-mock3-sidebar-cat-300.jpg 300w,
+                images/lesson04-mock3-sidebar-cat-500.jpg 500w,
+                images/lesson04-mock3-sidebar-cat-800.jpg 800w
+              "
+              sizes="(max-width: 600px) 80vw, 300px"
+              alt="Cat of the week"
+            >
           <figcaption class="caption-margin">Star at imgaginary bug love blinks and purr purr purr purr.</figcaption>
           </figure>
             <a class="aside-nav-a" href="Book-now">Book Now >></a>

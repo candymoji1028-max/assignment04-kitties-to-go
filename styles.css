@@ -165,6 +165,10 @@ footer {
   display: block;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+}
 /*-----------------------------------------------
 Accessibility features
 -----------------------------------------------*/
@@ -215,4 +219,20 @@ figure:focus {
   color: #52B2BF;
   padding-bottom: 2px;
   border-bottom: 3px solid #52B2BF
+}
+/*-------------------------------------------
+Background image and gradient 
+--------------------------------------------*/
+body {
+  background: linear-gradient(to bottom, #d4f8e8, #c7e9ff);
+  background-image: url("images/background-grass.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*make images responsive*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
