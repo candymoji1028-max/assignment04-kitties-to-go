@@ -80,6 +80,7 @@ body{
 .main-container .article-black {
   color: #3f3f3f;
 }
+
 /*side section style*/
 .aside-container {
   color: #3f3f3f;
@@ -220,12 +221,13 @@ figure:focus {
   padding-bottom: 2px;
   border-bottom: 3px solid #52B2BF
 }
-/*-------------------------------------------
-Background image and gradient 
---------------------------------------------*/
+/*-------------------------------------------------------------------------
+Background image and gradient (Updated to show gradient on top of image)
+---------------------------------------------------------------------------*/
 body {
-  background: linear-gradient(to bottom, #d4f8e8, #c7e9ff);
-  background-image: url("images/background-grass.jpg");
+  background-image: 
+    linear-gradient(to bottom, #A0DCC8CC, #8FC7FF33),/*shifting opacity overlay 80% -> 20% */
+    url("images/background-grass.jpg"); /*base image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -235,4 +237,93 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+/*----------------------------------------------------------------------------------
+Adjust the aside container, main content and cat image for mobile
+-------------------------------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+/* make side bar disappear on the home page only per instruction. Keep the About page the same*/
+  body.home .aside-container {
+    display: none;
+  }
+/* make main content full width on mobile*/
+  .main-content {
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1.5rem;
+  }
+/* Cat images fill container on mobile*/
+  .cat-week img {
+    width: 100%;
+    height: auto;
+  }
+  /* adjust header and p margin*/
+  h1,
+  header p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+/*--------------------------------------------------------------------------
+Adjust for iPad breakpoint and above/the side bar display at 767 px and above
+----------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+  /* Show sidebar on iPad and above */
+  .aside-container {
+    display: block;
+  }
+  /* Restore two-column layout */
+  .main-content {
+    flex-direction: row;
+    margin: 2rem 5.5rem 0;
+    gap: 50px; 
+  }
+  /* Cat image smaller on tablet */
+  .cat-week img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/*------------------------------------------------------------------
+The header and footer already display full width on all screen size. 
+No adjustment needed.
+------------------------------------------------------------------*/
+
+/*-----------------------------------
+make the page printable
+--------------------------------------*/
+@media print {
+  /* All print styles go here */
+  /* Hide navigation and sidebar */
+  nav,
+  .aside-container,
+  .header-nav,
+  .footer-nav-ul,
+  .back-to-top-container {
+    display: none !important
+  }
+  /* make content full width */
+  .main-content,
+  .main-container {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+  /* images print */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+  /* remove background images */
+  body,
+  header,
+  footer {
+    background: white !important;
+  }
+  body {
+    color: black;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
 }
